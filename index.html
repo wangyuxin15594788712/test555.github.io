@@ -42,11 +42,19 @@
      <source src="http://music.163.com/song/media/outer/url?id=526464145.mp3" type="audio/mpeg">
      </audio>
 <script type="text/javascript">
-	document.addEventListener('DOMContentLoaded', function() {
-	   document.getElementById('music').play()
-	}, false)
+    window.onload = function(){
+             setInterval("toggleSound()",1);
+        }
 
+    function toggleSound() {
+                var music = document.getElementById("music");//获取ID  
+                if (music.paused) { //判读是否播放  
+                    music.paused=false;
+                    music.play(); //没有就播放 
+                }    
+        }
 </script>
+
       <img class="img" src="./123.png" alt="" />
       <!-- 爱心 -->
       <canvas id="pinkboard" class="container"> </canvas>
